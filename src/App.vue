@@ -1,11 +1,51 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="drawer lg:drawer-open font-display">
+    <input type="checkbox" id="my-drawer" class="drawer-toggle" />
+    <!-- Page Content including Navbar and routed pages -->
+    <div class="drawer-content flex flex-col min-h-screen bg-gray-100 dark:bg-backgroundDark">
+      <Navbar :isDark="isDark" @toggle-drawer="toggleDrawer" @toggle-theme="toggleTheme"/>
+      <main class="flex-1">
+        <router-view />
+      </main>
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<script setup>
+import { onMounted, ref, watchEffect } from 'vue';
+import Navbar from './components/Navbar.vue';
+
+const isDark = ref(true);
+
+onMounted(() => {
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (savedTheme) {
+    isDark.value = savedTheme === 'dark';
+  } else if (systemPrefersDark) {
+    isDark.value = true;
+  }
+});
+
+watchEffect(() => {
+  const html = document.documentElement;
+  if (isDark.value) {
+    html.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    html.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  }
+});
+
+const toggleTheme = () => {
+  isDark.value = !isDark.value;
+};
+
+const toggleDrawer = () => {
+  const drawer = document.getElementById('my-drawer');
+  if (drawer) {
+    drawer.checked = !drawer.checked;
+  }
+};
+</script>
