@@ -5,6 +5,7 @@ import Login from '../pages/Login.vue'
 import UsersList from '../pages/UsersList.vue'
 
 const routes = [
+  { path: '/', name: 'Dashboard', component: Dashboard },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/grocery-lists', name: 'GroceryList', component: GroceryList },
   { path: '/login', name: 'Login', component: Login },
