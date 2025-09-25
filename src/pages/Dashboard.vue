@@ -8,7 +8,7 @@
       </div>
       <div class="bg-white dark:bg-backgroundDark rounded shadow p-4 flex flex-col items-start">
         <span class="text-xs text-gray-500 dark:text-gray-400">Revenue</span>
-        <span class="text-2xl font-bold text-gray-900 dark:text-white">$42,678</span>
+        <span class="text-2xl font-bold text-gray-900 dark:text-white">R42,678</span>
       </div>
       <div class="bg-white dark:bg-backgroundDark rounded shadow p-4 flex flex-col items-start">
         <span class="text-xs text-gray-500 dark:text-gray-400">New Orders</span>
@@ -85,9 +85,9 @@
 import { onMounted, ref } from "vue";
 // Dummy data for demonstration
 const recentOrders = ref([
-  { id: "#2345", user: "John Chen", date: "2025-09-22", amount: "$120.50", status: "Completed" },
-  { id: "#2346", user: "Jane Smith", date: "2025-09-23", amount: "$95.30", status: "Pending" },
-  { id: "#2347", user: "Robert Johnson", date: "2025-09-24", amount: "$151.10", status: "Completed" },
+  { id: "#2345", user: "John Chen", date: "2025-09-22", amount: "R120.50", status: "Completed" },
+  { id: "#2346", user: "Jane Smith", date: "2025-09-23", amount: "R95.30", status: "Pending" },
+  { id: "#2347", user: "Robert Johnson", date: "2025-09-24", amount: "R151.10", status: "Completed" },
 ]);
 const recentActivities = ref([
   { id: 1, user: "John Chen", action: "placed an order", time: "2h ago" },
@@ -144,7 +144,7 @@ onMounted(() => {
     new Chart(productPerformanceCtx, {
       type: 'bar',
       data: {
-        labels: ['North', 'South', 'East', 'West'],
+        labels: ['TUT Sosha', 'TUT Main', 'TUT Arcadia', 'UP'],
         datasets: [
           { label: 'Rice', data: [5000, 7000, 6000, 8000], backgroundColor: '#6366f1' },
           { label: 'Milk', data: [2000, 3000, 2500, 4000], backgroundColor: '#f472b6' },
