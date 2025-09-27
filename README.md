@@ -4,7 +4,7 @@ The **Jaspay Admin Portal** is the backend dashboard for managing the Jaspay eco
 
 ---
 
-## 🚀 Core Features
+## Core Features
 
 ### 1. **User Management**
 - View and manage registered Jaspay users.
@@ -28,7 +28,7 @@ The **Jaspay Admin Portal** is the backend dashboard for managing the Jaspay eco
 
 ---
 
-## 🧱 Tech Stack
+## Tech Stack
 
 - **Frontend**: Vue 3 + Vite
 - **State Management**: Pinia / Vuex
@@ -37,7 +37,7 @@ The **Jaspay Admin Portal** is the backend dashboard for managing the Jaspay eco
 
 ---
 
-## 📦 Project Setup
+## Project Setup
 
 ```bash
 ## Install dependencies
