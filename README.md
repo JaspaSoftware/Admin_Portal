@@ -1,29 +1,54 @@
-# admin_portal
+# 🛠️ Jaspay Admin Portal
 
-This template should help get you started developing with Vue 3 in Vite.
+The **Jaspay Admin Portal** is the backend dashboard for managing the Jaspay ecosystem. Built with **Vue.js**, this portal enables admins and vendors to efficiently manage user accounts, grocery specials, and food stock inventory uploaded by users from different regions.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🚀 Core Features
 
-## Customize configuration
+### 1. **User Management**
+- View and manage registered Jaspay users.
+- Assign roles (admin, vendor, user).
+- Monitor activity and filter users by location.
+- Suspend or flag suspicious accounts.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### 2. **Grocery Specials Aggregation**
+- Upload and manage grocery specials submitted by users.
+- Aggregate and display specials based on:
+  - Location
+  - Popularity or demand
+  - Store or vendor
+- Tag items with promo statuses like “50% Drop” or “Hot Deal”.
 
-## Project Setup
+### 3. **Food Stock Inventory Management**
+- Track stock items submitted by users or vendors.
+- Update quantity, categories, and expiry info.
+- View stock trends and low inventory warnings.
+- Categorize items (vegetables, meat, grains, etc.).
 
-```sh
+---
+
+## 🧱 Tech Stack
+
+- **Frontend**: Vue 3 + Vite
+- **State Management**: Pinia / Vuex
+- **UI Framework**: TailwindCSS or Vuetify
+- **Backend (optional)**: Firebase Firestore / Node.js REST API
+
+---
+
+## 📦 Project Setup
+
+```bash
+## Install dependencies
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+## Start development server
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+src/
+│
+├── components/       → Reusable UI components
+├── views/            → Admin pages (Users, Specials, Inventory)
+├── store/            → Pinia or Vuex modules
+├── assets/           → Styles, images
+└── utils/            → API services and helpers
